@@ -1,3 +1,5 @@
+---
+
 # 🚗 AI-Powered Vehicle Condition Assessment — Hiring Sprint
 
 > **⏱️ Duration:** 48 hours
@@ -26,32 +28,37 @@
 
 ## 🧩 Overview
 
-Challenge developers to design and implement an **AI-powered vehicle condition assessment** feature. The system should enable customers to capture photos at **pick-up and return**, automatically detect damages, and display reports.
+Challenge developers to design and implement an **AI-powered vehicle condition assessment** feature.
+The system should enable customers to capture photos at **pick-up and return**, automatically detect damages, and display reports.
 
 **Accepted formats:** web app 🌐, mobile app 📱, or chatbot 🤖.
 Use of pretrained AI/ML models or APIs is **allowed** ✅.
 
-**The goal:**
+### 🧱 Tech Choice Clarification
 
-* Capture/upload vehicle images.
-* Detect & compare damages between pick-up and return.
-* Estimate severity & cost 💰.
-* Display results in a simple, intuitive dashboard.
-* Provide APIs for integration.
+* Choose **one frontend**: either **Web** 🌐 *or* **Mobile** 📱.
+* You may use **any backend language or framework** (Node.js, Python, Go, etc.).
+* No persistent storage is required — you can simulate uploads and results in memory.
+
+**Goal:**
+
+* Capture/upload vehicle images
+* Detect & compare damages between pick-up and return
+* Estimate severity & cost 💰
+* Display results in a simple dashboard
+* Provide REST or GraphQL APIs for integration
 
 ---
 
 ## 📦 Deliverables & Checklist
 
-Each submission **must include**:
-
-| Deliverable                 | Description                                           |
-| --------------------------- | ----------------------------------------------------- |
-| 🌐 **Deployed Service URL** | Publicly accessible link or Docker image instructions |
-| 💻 **GitHub Repo**          | All code, infra configs, and setup steps              |
-| 📘 **Documentation**        | README, API docs (OpenAPI/GraphQL), AI model notes    |
-| 🎥 **Video Walkthrough**    | 2–5 minute demo showing capture → detection → report  |
-| 🔑 **Demo Credentials**     | Username/password or tokens (in `.env.example`)       |
+| Deliverable                 | Description                                          |
+| --------------------------- | ---------------------------------------------------- |
+| 🌐 **Deployed Service URL** | Publicly accessible link or Docker run instructions  |
+| 💻 **GitHub Repo**          | All code, infra configs, and setup steps             |
+| 📘 **Documentation**        | README, API docs (OpenAPI/GraphQL), AI model notes   |
+| 🎥 **Video Walkthrough**    | 2–5 minute demo showing capture → detection → report |
+| 🔑 **Demo Credentials**     | Username/password or tokens (in `.env.example`)      |
 
 **Submission checklist:**
 
@@ -83,12 +90,14 @@ Each submission **must include**:
 ## ⚙️ Technical Requirements
 
 * **Timeframe:** 48 hours ⏰
-* **Photo Capture:** browser/mobile camera APIs (no external SDKs)
-* **AI Models:** pretrained or API-based (YOLO, Detectron, Vision APIs)
-* **Damage Comparison:** side-by-side or overlay visual diff 🆚
-* **Reporting:** JSON + UI (severity, estimated cost)
-* **API:** REST or GraphQL endpoints
-* **Privacy:** no real customer data, mask sensitive info
+* **Frontend:** choose **Web** 🌐 or **Mobile** 📱 (not both).
+* **Backend:** any language (Node.js, Python, Go, Java, etc.) — focus on simplicity.
+* **Photo Capture:** browser/mobile camera APIs (no external SDKs).
+* **AI Models:** pretrained or API-based (YOLO, Detectron, Vision APIs).
+* **Damage Comparison:** side-by-side or overlay visual diff 🆚.
+* **Reporting:** JSON + UI (severity, estimated cost).
+* **Storage:** ❌ Not required — simulate uploads and comparisons in-memory.
+* **Privacy:** no real customer data, mask sensitive info.
 
 ---
 
@@ -128,13 +137,69 @@ Include:
 
 ### 📱 Mobile App
 
-* Use **React Native/Expo** or **Flutter**.
-* Provide simulator instructions or TestFlight/Expo link.
+Participants can build mobile apps using **React Native (Expo)**, **Flutter**, or **Native Android**.
+
+#### **Option 1 — React Native (Expo)** 🥇
+
+> ⚡ Recommended for solo developers — no native setup required.
+
+**How to deploy:**
+
+```bash
+npx create-expo-app ai-vehicle-inspection
+npx expo publish
+```
+
+**Shareable link example:**
+
+```
+https://expo.dev/@yourusername/ai-vehicle-inspection
+```
+
+Judges can open via **Expo Go** on iOS/Android instantly.
+Include this link in your submission.
+
+#### **Option 2 — Flutter**
+
+> Build and share a lightweight web or APK build.
+
+```bash
+flutter build apk --debug
+flutter build web
+```
+
+Then host:
+
+* APK on Google Drive / GitHub Releases
+* Web build on Vercel, Netlify, or Firebase Hosting
+
+Include both the **download link** and **install instructions**.
+
+#### **Option 3 — Native Android**
+
+> For Kotlin/Java developers.
+
+```bash
+./gradlew assembleDebug
+```
+
+Upload `app-debug.apk` and share a public download link.
+
+#### 🧭 Mobile Deployment Summary
+
+| Framework               | How to Deploy          | Judge Access                  |
+| ----------------------- | ---------------------- | ----------------------------- |
+| **Expo (React Native)** | Publish via Expo Cloud | QR code / link via Expo Go    |
+| **Flutter**             | Build web or APK       | Direct download or hosted web |
+| **Native Android**      | Debug APK build        | Manual install                |
+
+---
 
 ### 🤖 Chatbot UI
 
-* Host a minimal web chat interface accepting image uploads.
+* Host a minimal web chat interface that accepts image uploads.
 * Display damage detection summaries.
+* Can use **Next.js + LangChain + Vision API** or similar stack.
 
 📘 Include setup steps in `docs/deployment.md`.
 
@@ -156,46 +221,46 @@ Include:
 ## 🧠 AI / LLM Resources
 
 **Cloud APIs:**
-
-* ☁️ Google Cloud Vision
-* 🔍 Azure Computer Vision
-* 🧩 AWS Rekognition
+☁️ Google Cloud Vision
+🔍 Azure Computer Vision
+🧩 AWS Rekognition
 
 **Hosted APIs:**
-
-* 🤖 OpenAI Vision / GPT-4V
-* 🧬 Hugging Face / Replicate (YOLO, DETR, SAM)
+🤖 OpenAI Vision / GPT-4V
+🧬 Hugging Face / Replicate (YOLO, DETR, SAM)
 
 **Open Source Models:**
-
-* 🦾 YOLOv8 / YOLOv7
-* 🧩 Detectron2 / Mask R-CNN
-* 🖼️ Segment Anything (SAM)
-* 🎯 Grounding DINO
+🦾 YOLOv8 / YOLOv7
+🧩 Detectron2 / Mask R-CNN
+🖼️ Segment Anything (SAM)
+🎯 Grounding DINO
 
 **LLM Integration Ideas:**
 
-* Convert model output → human-readable summary
+* Convert model output → human-readable summary.
 * Example: *“Detected new scratch on front bumper; estimated repair cost: $80.”*
 
 ---
 
 ## 💅 Frontend Recommendations
 
+**Frontend Choice:**
+You must pick **either Web 🌐 or Mobile 📱** as your primary interface.
+
 **Core Flow:** Vehicle info → photo capture → AI detection → damage report
 
 **UX Tips:**
 
 * Side-by-side comparison with highlight overlays 🔍
-* Manual correction (false positive/negative)
+* Manual correction (false positives/negatives)
 * Exportable PDF/JSON reports 📄
-* Mobile-first UI 📱
+* Mobile-first design if targeting phone users 📱
 
 **Stacks:**
 
 * Web: **React (Next.js/Vite) + Tailwind CSS**
-* Mobile: **React Native + Expo** or **Flutter**
-* Chatbot: **React + Chat UI + image upload**
+* Mobile: **React Native (Expo)** or **Flutter**
+* Chatbot: **React + Chat UI + Image Upload**
 
 ---
 
@@ -209,7 +274,7 @@ Include:
 | 📶 Offline capture/sync    | +10    |
 | 🧩 Explainability features | +10    |
 
-Include instructions to run tests (`npm test`, `pytest tests/`, etc.)
+Include instructions to run tests (`npm test`, `pytest tests/`, etc.).
 
 ---
 
@@ -218,7 +283,7 @@ Include instructions to run tests (`npm test`, `pytest tests/`, etc.)
 * Mask/blur license plates & personal data 🕵️‍♂️
 * Store minimal image data 🔐
 * Use `.env` for all API keys 🔑
-* Add a `DELETE` API for image cleanup ♻️
+* Add a `DELETE` API for cleanup ♻️
 
 ---
 
@@ -227,9 +292,10 @@ Include instructions to run tests (`npm test`, `pytest tests/`, etc.)
 1. Finalize repo → PR to `main` branch.
 2. Tag release: `v1-hackathon` 🏷️
 3. Include deployed URL + walkthrough video in release notes.
-4. Submit via the official sprint form before deadline.
+4. Submit via the official sprint form before the deadline.
 
-⏰ **Deadline:** exactly 48 hours after kickoff. Late submissions are not accepted unless due to verified platform issues.
+⏰ **Deadline:** exactly 48 hours after kickoff.
+Late submissions will not be accepted (unless due to verified platform issues).
 
 ---
 
@@ -239,12 +305,15 @@ Include instructions to run tests (`npm test`, `pytest tests/`, etc.)
 **A:** ✅ Yes, label them clearly.
 
 **Q:** Is custom training required?
-**A:** ❌ No. Use pretrained or API-based models.
+**A:** ❌ No — use pretrained or hosted models.
+
+**Q:** Do we need to set up storage?
+**A:** ❌ No persistent storage required; simulate uploads and responses in memory.
 
 **Q:** How do we estimate cost?
-**A:** 💰 Rule-based model or LLM mapping.
+**A:** 💰 Use a simple rule-based or LLM-mapped function.
 
-**Tip:** Plan first 6–8 hours for setup & architecture, then focus on MVP.
+**Tip:** Spend your first 6–8 hours setting up architecture and AI integration, then focus on MVP delivery.
 
 ---
 
@@ -267,4 +336,6 @@ function estimateCost(detections) {
 
 ---
 
-> 🏁 **Good luck!** Build smart, fast, and ethically. Let your prototype redefine rental inspections 🚀.
+> 🏁 **Good luck!** Build smart, fast, and ethically. Let your prototype redefine rental inspections 🚀
+
+---
