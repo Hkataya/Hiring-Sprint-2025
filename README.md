@@ -1,4 +1,3 @@
-Testing my fork
 
 # 🚗 AI-Powered Vehicle Condition Assessment — Hiring Sprint
 
